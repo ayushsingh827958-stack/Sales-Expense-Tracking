@@ -1,7 +1,7 @@
 
 function addSale() {
 
-    fetch("http://127.0.0.1:8000/sales/", {
+    fetch("https://tracker-dqo6.onrender.com/sales/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -22,7 +22,7 @@ function addSale() {
 
 function showSales() {
 
-    const respose = fetch("http://127.0.0.1:8000/sales/")
+    const respose = fetch("https://tracker-dqo6.onrender.com/sales/")
         .then(res => res.json())
         .then(data => {
             const list = document.getElementById("result")
@@ -41,7 +41,7 @@ async function addExpense() {
     const item = document.getElementById("item").value
     const expense_amounts = document.getElementById("expense_amount").value
 
-    await fetch("http://127.0.0.1:8000/expenses/", {
+    await fetch("https://tracker-dqo6.onrender.com/expenses/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -58,7 +58,7 @@ async function addExpense() {
 
 async function showExpenses() {
 
-    const response = await fetch("http://127.0.0.1:8000/expenses/")
+    const response = await fetch("https://tracker-dqo6.onrender.com/expenses/")
     const data = await response.json()
 
     const list = document.getElementById("expenseList")
@@ -81,7 +81,7 @@ document.getElementById('report-date').innerText = "Date: " + today.toLocaleDate
 // Fetch report from API
 // 
 function generateReport() {
-    fetch('http://127.0.0.1:8000/reports/reports')
+    fetch('https://tracker-dqo6.onrender.com/reports/')
         .then(res => res.json())
         .then(data => {
             document.getElementById('total-sales').innerText = data["Total Sales"];
